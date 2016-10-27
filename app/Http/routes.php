@@ -39,6 +39,11 @@ Route::group(['middleware' => 'auth'], function() {
 		'uses' => 'UserController@postSaveAccount',
 		'as' => 'account.save'
 	]);
+
+	Route::get('/userimage/{filename}', [
+		'uses' => 'UserController@getUserImage',
+		'as' => 'account.image'
+	]);
 	
 	Route::post('/createpost', [
 		'uses' => 'PostController@postCreatePost',
